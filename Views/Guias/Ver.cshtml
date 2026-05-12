@@ -1,0 +1,54 @@
+@model InfraManager.Models.Guia
+
+@{
+    @* o título da aba do navegador mostra o título do guia *@
+    ViewData["Title"] = Model.Titulo;
+}
+
+<div class="page-container">
+
+    <h2>📘 @Model.Titulo</h2>
+
+    @*informações de quem criou e quando *@
+    <div class="guia-meta">
+        <small>Por: <strong>@Model.Autor</strong> • @Model.DataCriacao.ToString("dd/MM/yyyy")</small>
+    </div>
+
+    @* seção do PDF — só aparece se esse guia tiver um PDF anexado *@
+    @if (!string.IsNullOrEmpty(Model.ArquivoPdf))
+    {
+        <div class="guia-secao">
+            <h3>📄 PDF Anexado</h3>
+            <div class="pdf-acoes">
+
+              
+                <a href="~/uploads/@Model.ArquivoPdf" target="_blank" class="btn-action btn-editar">
+                    Visualizar PDF
+                </a>
+
+                @* download faz o navegador baixar o arquivo em vez de abrir *@
+                <a href="~/uploads/@Model.ArquivoPdf" download class="btn-action btn-concluir">
+                    Baixar PDF
+                </a>
+            </div>
+        </div>
+    }
+
+    @* seção do texto — só aparece se esse guia tiver conteúdo em texto *@
+    @if (!string.IsNullOrEmpty(Model.ConteudoTexto))
+    {
+        <div class="guia-secao">
+            <h3>📝 Passo a Passo</h3>
+
+            @* <pre> mantém a formatação original do texto:
+               quebras de linha, espaços e tabulações ficam como foram digitados *@
+            <pre class="guia-texto">@Model.ConteudoTexto</pre>
+        </div>
+    }
+
+    <div class="form-acoes" style="margin-top: 24px">
+        <a asp-action="Index" class="btn-voltar">← Voltar</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn-action btn-excluir">Excluir</a>
+    </div>
+
+</div>

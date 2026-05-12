@@ -1,0 +1,97 @@
+@model IEnumerable<InfraManager.Models.Tarefa>
+
+@{
+    ViewData["Title"] = "Tarefas";
+}
+
+<div class="page-container">
+
+    <h2>Lista de Tarefas</h2>
+
+    @* Filtro de tarefas: ao trocar a opção, o formulário é enviado automaticamente
+       via onchange="this.form.submit()" — sem precisar clicar em nenhum botão *@
+    <div class="filtro-container">
+        <form method="get">
+            <select name="filtro" onchange="this.form.submit()">
+                <option value="">Todas</option>
+
+                @* selected="..." marca a opção que está ativa no momento
+                   Context.Request.Query["filtro"] lê o valor que está na URL *@
+                <option value="pendentes" selected="@(Context.Request.Query["filtro"] == "pendentes")">Pendentes</option>
+                <option value="concluidas" selected="@(Context.Request.Query["filtro"] == "concluidas")">Concluídas</option>
+            </select>
+        </form>
+    </div>
+
+    @* botão para ir para a tela de criar nova tarefa *@
+    <div class="header-view">
+        <a asp-action="Create" class="add-item-btn">+ Nova Tarefa</a>
+    </div>
+
+    @* tabela com todas as tarefas *@
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Criada em</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @* @foreach percorre cada tarefa da lista e cria uma linha na tabela *@
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Titulo</td>
+
+                    @* o "??" significa "se for vazio, mostra —" *@
+                    <td>@(item.Descricao ?? "—")</td>
+
+                    @* formata a data no padrão brasileiro: dia/mês/ano *@
+                    <td>@item.DataCriacao.ToString("dd/MM/yyyy")</td>
+
+                    <td>
+                        @* mostra um badge diferente dependendo do status da tarefa *@
+                        @if (item.Concluida)
+                        {
+                            <span class="status-concluida">✅ Concluída</span>
+                        }
+                        else
+                        {
+                            <span class="status-pendente">⏳ Pendente</span>
+                        }
+                    </td>
+
+                    <td class="acoes-td">
+                        @* botão de editar: leva para /Tarefas/Edit/{id} *@
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn-action btn-editar">Editar</a>
+
+                        @* botão de concluir: só aparece se a tarefa ainda não foi concluída
+                           e um FORM com method="post" — nunca um link simples —
+                           porque estamos alterando dados no banco *@
+                        @if (!item.Concluida)
+                        {
+                            <form asp-action="Concluir" asp-route-id="@item.Id" method="post" style="display:inline">
+                                @* Token de segurança — protege contra ataques externos *@
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn-action btn-concluir">Concluir</button>
+                            </form>
+                        }
+
+                        @* botão de excluir: leva para a tela de confirmação antes de excluir *@
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn-action btn-excluir">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @* mensagem que aparece quando não há nenhuma tarefa na lista *@
+    @if (!Model.Any())
+    {
+        <p class="lista-vazia">Nenhuma tarefa encontrada.</p>
+    }
+
+</div>

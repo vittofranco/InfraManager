@@ -1,0 +1,42 @@
+@model InfraManager.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Nova Tarefa";
+}
+
+<div class="page-container form-container">
+
+    <h2>Nova Tarefa</h2>
+
+    @* asp-action="Create" faz o formulário enviar para POST /Tarefas/Create *@
+    <form asp-action="Create" method="post">
+
+        @* token de segurança obrigatório em todo formulário POST *@
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @* asp-for liga o label e o input ao campo "Titulo" do model Tarefa *@
+            <label asp-for="Titulo">Título</label>
+            <input asp-for="Titulo" class="form-input" placeholder="Ex: Trocar memória do PC-05" />
+
+            @* mostra a mensagem de erro de validação se o campo não for preenchido *@
+            <span asp-validation-for="Titulo" class="erro-validacao"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Descricao">Descrição</label>
+            @* textarea é uma caixa de texto maior, boa para textos longos
+               rows="4" define a altura inicial (4 linhas) *@
+            <textarea asp-for="Descricao" class="form-input" rows="4" placeholder="Descreva a tarefa..."></textarea>
+        </div>
+
+        <div class="form-acoes">
+            @* notão de envio — ao clicar, o formulário é enviado *@
+            <button type="submit" class="add-item-btn">Salvar</button>
+
+            @* link para cancelar e voltar para a lista sem salvar nada *@
+            <a asp-action="Index" class="btn-voltar">Cancelar</a>
+        </div>
+    </form>
+
+</div>

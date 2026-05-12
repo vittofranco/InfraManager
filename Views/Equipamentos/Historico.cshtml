@@ -1,0 +1,63 @@
+@*
+   Equipamentos/Historico.cshtml — lista de equipamentos concluídos
+   mostra todos os equipamentos cuja manutenção já foi finalizada
+*@
+
+@model IEnumerable<InfraManager.Models.Equipamento>
+
+@{
+    ViewData["Title"] = "Histórico de Equipamentos";
+}
+
+<div class="page-container">
+
+    <h2>Histórico de Equipamentos</h2>
+
+    @* botão para voltar para a lista de equipamentos em aberto *@
+    <div class="header-view">
+        <a asp-action="Index" class="btn-voltar">← Voltar para Em Manutenção</a>
+    </div>
+
+    @if (Model.Any())
+    {
+        <div class="equip-lista">
+            @foreach (var equip in Model)
+            {
+                @* card com visual diferente para indicar que está concluído *@
+                <div class="equip-card equip-card-concluido">
+                    <div class="equip-card-header">
+                        <div class="equip-card-titulo">
+                            <strong>@equip.Tipo — Patrimônio: @equip.Patrimonio</strong>
+                        </div>
+
+                        @* badge verde fixo indicando que foi concluído *@
+                        <span class="badge-gravidade baixa">Concluído</span>
+                    </div>
+
+                    <p class="equip-descricao">@(equip.Descricao ?? "Sem descrição.")</p>
+
+                    <div class="equip-info">
+                        <small>
+                            Responsável: <strong>@equip.Responsavel</strong> •
+                            Localização: <strong>@equip.Localizacao</strong> •
+                            Entrada: <strong>@equip.DataEntrada.ToString("dd/MM/yyyy")</strong> •
+                            @* mostra a data de conclusão — o "?" evita erro caso seja null *@
+                            Concluído em: <strong>@equip.DataConclusao?.ToString("dd/MM/yyyy")</strong>
+                        </small>
+                    </div>
+
+                    <div class="equip-acoes">
+                        @* na tela de histórico só mostra detalhes e excluir *@
+                        <a asp-action="Detalhes" asp-route-id="@equip.Id" class="btn-action btn-ver">Detalhes</a>
+                        <a asp-action="Delete" asp-route-id="@equip.Id" class="btn-action btn-excluir">Excluir</a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="lista-vazia">Nenhum equipamento concluído ainda.</p>
+    }
+
+</div>

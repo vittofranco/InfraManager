@@ -1,0 +1,63 @@
+@model IEnumerable<InfraManager.Models.Guia>
+
+@{
+    ViewData["Title"] = "Guias de Instalação";
+}
+
+<div class="page-container">
+
+    <h2>Guias de Instalação</h2>
+
+    <div class="header-view">
+        <a asp-action="Create" class="add-item-btn">+ Novo Guia</a>
+    </div>
+
+    @* model.Any() verifica se existe pelo menos um guia na lista *@
+    @if (Model.Any())
+    {
+        <div class="guias-lista">
+            @foreach (var guia in Model)
+            {
+                <div class="guia-card">
+
+                    @* cabeçalho do card com título e autor *@
+                    <div class="guia-card-header">
+                        <strong>@guia.Titulo</strong>
+                        <small>Por: @guia.Autor • @guia.DataCriacao.ToString("dd/MM/yyyy")</small>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(guia.ConteudoTexto))
+                    {
+                        <p class="guia-preview">@(guia.ConteudoTexto.Length > 100 ? guia.ConteudoTexto[..100] + "..." : guia.ConteudoTexto)</p>
+                    }
+
+                    @* badges que indicam o que o guia tem (texto, PDF ou ambos) *@
+                    <div class="guia-badges">
+                        @if (!string.IsNullOrEmpty(guia.ConteudoTexto))
+                        {
+                            <span class="badge badge-texto">📝 Texto</span>
+                        }
+                        @if (!string.IsNullOrEmpty(guia.ArquivoPdf))
+                        {
+                            <span class="badge badge-pdf">📄 PDF</span>
+                        }
+                    </div>
+
+                    <div class="guia-acoes">
+                        @* botão Ver: leva para a tela completa do guia *@
+                        <a asp-action="Ver" asp-route-id="@guia.Id" class="btn-action btn-editar">Ver</a>
+
+                        @* botão Excluir: leva para a tela de confirmação *@
+                        <a asp-action="Delete" asp-route-id="@guia.Id" class="btn-action btn-excluir">Excluir</a>
+                    </div>
+
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="lista-vazia">Nenhum guia cadastrado ainda.</p>
+    }
+
+</div>

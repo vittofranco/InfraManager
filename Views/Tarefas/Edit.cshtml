@@ -1,0 +1,44 @@
+@model InfraManager.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Editar Tarefa";
+}
+
+<div class="page-container form-container">
+
+    <h2>Editar Tarefa</h2>
+
+    <form asp-action="Edit" method="post">
+        @Html.AntiForgeryToken()
+
+        @* campo oculto que envia o Id da tarefa junto com o formulário
+           sem isso, o controller não saberia qual tarefa está sendo editada
+           type="hidden" significa que o usuário não vê esse campo na tela *@
+        <input type="hidden" asp-for="Id" />
+
+        <div class="form-group">
+            <label asp-for="Titulo">Título</label>
+            @* asp-for="Titulo" já preenche o campo com o título atual da tarefa *@
+            <input asp-for="Titulo" class="form-input" />
+            <span asp-validation-for="Titulo" class="erro-validacao"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Descricao">Descrição</label>
+            @* textarea em vez de input — campo grande para textos longos *@
+            <textarea asp-for="Descricao" class="form-input" rows="4"></textarea>
+        </div>
+
+        @* Checkbox para marcar/desmarcar como concluída na própria edição *@
+        <div class="form-group form-group-check">
+            <label asp-for="Concluida">Concluída?</label>
+            <input asp-for="Concluida" type="checkbox" />
+        </div>
+
+        <div class="form-acoes">
+            <button type="submit" class="add-item-btn">Salvar Alterações</button>
+            <a asp-action="Index" class="btn-voltar">Cancelar</a>
+        </div>
+    </form>
+
+</div>

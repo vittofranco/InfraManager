@@ -1,0 +1,114 @@
+@*
+   equipamentos/Index.cshtml — lista de equipamentos em manutenção
+   tem busca por patrimônio e mostra badge de gravidade colorido
+*@
+
+@model IEnumerable<InfraManager.Models.Equipamento>
+
+@{
+    ViewData["Title"] = "Equipamentos";
+}
+
+<div class="page-container">
+
+    <h2>Equipamentos em Manutenção</h2>
+
+    @* cabeçalho com botões de ação e acesso ao histórico *@
+    <div class="equip-header-top">
+        <div class="equip-header-historico">
+            @* leva para a lista de equipamentos com manutenção concluída *@
+            <a asp-action="Historico" class="btn-action btn-historico">Concluídos</a>
+            <a asp-action="Condenados" class="btn-action btn-historico">Condenados</a>
+        </div>
+        @* botão de cadastro — canto direito *@
+        <a asp-action="Create" class="add-item-btn">Cadastrar Equipamento</a>
+    </div>
+
+    @* campo de busca por patrimônio
+       method="get" faz a busca aparecer na URL: /Equipamentos?busca=12345 *@
+    <form method="get" class="busca-container">
+        <input type="text" name="busca" placeholder="Buscar por patrimônio..."
+               value="@Context.Request.Query["busca"]" class="form-input busca-input" />
+        <button type="submit" class="add-item-btn">Buscar</button>
+
+        @* botão para limpar a busca e mostrar todos os equipamentos de novo *@
+        @if (!string.IsNullOrEmpty(Context.Request.Query["busca"]))
+        {
+            <a asp-action="Index" class="btn-voltar">Limpar</a>
+        }
+    </form>
+
+    @if (Model.Any())
+    {
+        <div class="equip-lista">
+            @foreach (var equip in Model)
+            {
+                <div class="equip-card gravidade-@equip.Gravidade.ToLower()">
+                    <div class="equip-card-header">
+                        <div class="equip-card-titulo">
+                            <strong>@equip.Tipo — Patrimônio: @equip.Patrimonio</strong>
+                        </div>
+
+                @*
+                    Aqui vai a mudança do Dropdown, essa mudança vai ser somente visualmente, HTML e CSS.
+                    Badge de gravidade com cor diferente para cada nível.
+                *@
+                    <div class="dropdown">
+                        <button class="btn-dropdown-toggle" onclick="toggleDropdown(this)">...</button>
+
+                        <div class="dropdown-menu">
+                            <a asp-action="Detalhes" asp-route-id="@equip.Id" class="dropdown-item">Detalhes</a>
+                            <a asp-action="Edit" asp-route-id="@equip.Id" class="dropdown-item">Editar</a>
+                            <form asp-action="Concluir" asp-route-id="@equip.Id" method="post">
+
+                            @Html.AntiForgeryToken()
+
+                            <button type="submit" class="dropdown-item">Concluir</button>
+                            </form>
+
+                            <a asp-action="Condenar" asp-route-id="@equip.Id" class="dropdown-item dropdown-item-condenar">Condenar</a>
+                            <div class="dropdown-divider"></div>
+
+                            <a asp-action="Delete" asp-route-id="@equip.Id" class="dropdown-item dropdown-item-excluir">Excluir</a>
+                        </div>
+                     </div>
+                    </div>
+
+                    <p class="equip-descricao">@(equip.Descricao ?? "Sem descrição.")</p>
+
+                    <div class="equip-info">
+                        <small>
+                            Responsável: <strong>@equip.Responsavel</strong> •
+                            Localização: <strong>@equip.Localizacao</strong> •
+                            Entrada: <strong>@equip.DataEntrada.ToString("dd/MM/yyyy")</strong>
+                        </small>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="lista-vazia">Nenhum equipamento em manutenção.</p>
+    }
+</div>
+    
+<script>
+    function toggleDropdown(botao) {
+        const menu = botao.nextElementSibling;
+
+        document.querySelectorAll('.dropdown-menu-aberto').forEach(m => {
+           if (m !== menu) m.classList.remove('aberto');
+        });
+
+        menu.classList.toggle('aberto');
+    }
+
+    document.addEventListener('click', function (e) {
+       if (!e.target.closest('.dropdown')) {
+           document.querySelectorAll('.dropdown-menu.aberto').forEach(m => {
+               m.classList.remove('aberto');
+           });
+       }
+    });
+</script>

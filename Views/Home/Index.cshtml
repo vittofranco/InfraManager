@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Início";
+}
+
+<div class="page-container home-container">
+    <h2>InfraManager</h2>
+    <p>Selecione uma opção.</p>
+    <div class=".bg-animado"></div>
+
+    <div class="home-cards">
+        <a asp-controller="Equipamentos" asp-action="Index" class="home-card">
+            <strong>Equipamentos</strong>
+            <small>Cadastrar e acompanhar equipamentos em manutenção</small>
+        </a>
+        <a asp-controller="Tarefas" asp-action="Index" class="home-card">
+            <strong>Tarefas</strong>
+            <small>Criar, editar e acompanhar tarefas</small>
+        </a>
+        <a asp-controller="Guias" asp-action="Index" class="home-card">
+            <strong>Guias de Instalação</strong>
+            <small>Passo a passo com texto e PDF</small>
+        </a>
+    </div>
+</div>

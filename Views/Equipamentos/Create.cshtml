@@ -1,0 +1,88 @@
+@*
+   Equipamentos/Create.cshtml — formulário de cadastro
+*@
+
+@model InfraManager.Models.Equipamento
+
+@{
+    ViewData["Title"] = "Cadastrar Equipamento";
+}
+
+<div class="page-container form-container">
+
+    <h2>Cadastrar Equipamento</h2>
+
+    <form asp-action="Create" method="post">
+        @Html.AntiForgeryToken()
+
+        @* Patrimônio e Tipo lado a lado *@
+        <div class="form-row">
+            <div class="form-group">
+                <label asp-for="Patrimonio">Patrimônio</label>
+                <input asp-for="Patrimonio" class="form-input" placeholder="Ex: 001234" />
+                <span asp-validation-for="Patrimonio" class="erro-validacao"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Tipo">Tipo de Equipamento</label>
+                @* <select> cria uma lista suspensa para o usuário escolher
+                   asp-for liga o select ao campo Tipo do model *@
+                <select asp-for="Tipo" class="form-input">
+                    <option value="" disabled selected>Selecione...</option>
+                    <option value="Computador">Computador</option>
+                    <option value="Impressora">Impressora</option>
+                    <option value="Monitor">Monitor</option>
+                    <option value="Nobreak">Nobreak</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <span asp-validation-for="Tipo" class="erro-validacao"></span>
+            </div>
+        </div>
+
+        @* Data de entrada e Gravidade lado a lado *@
+        <div class="form-row">
+            <div class="form-group">
+                <label asp-for="DataEntrada">Data de Entrada</label>
+                @* type="date" cria um seletor de data no navegador *@
+                <input asp-for="DataEntrada" type="date" class="form-input" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Gravidade">Gravidade</label>
+                <select asp-for="Gravidade" class="form-input">
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média" selected>Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Localizacao">Setor</label>
+            <select asp-for="Localizacao" class="form-input">
+                <option value="" disabled selected>Selecione...</option>
+                <option value="Call Center">Call Center</option>
+                <option value="T.I">T.I</option>
+            </select>
+            <span asp-validation-for="Localizacao" class="erro-validacao"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Descricao">Descrição do Problema</label>
+            <textarea asp-for="Descricao" class="form-input" rows="4"
+                placeholder="Descreva o problema do equipamento..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Responsavel">Responsável</label>
+            <input asp-for="Responsavel" class="form-input" placeholder="Seu nome" />
+            <span asp-validation-for="Responsavel" class="erro-validacao"></span>
+        </div>
+
+        <div class="form-acoes">
+            <button type="submit" class="add-item-btn">Cadastrar</button>
+            <a asp-action="Index" class="btn-voltar">Cancelar</a>
+        </div>
+    </form>
+
+</div>

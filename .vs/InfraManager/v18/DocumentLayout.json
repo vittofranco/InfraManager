@@ -1,0 +1,216 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|c:\\users\\travis\\onedrive\\infra manager - dashboard - easterr\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|c:\\users\\travis\\onedrive\\infra manager - dashboard - easterr\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|c:\\users\\travis\\onedrive\\infra manager - dashboard - easterr\\models\\equipamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|solutionrelative:models\\equipamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|c:\\users\\travis\\onedrive\\infra manager - dashboard - easterr\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|c:\\users\\travis\\onedrive\\infra manager - dashboard - easterr\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|c:\\users\\travis\\onedrive\\infra manager - dashboard - easterr\\controllers\\equipamentoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|solutionrelative:controllers\\equipamentoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|c:\\users\\travis\\onedrive\\infra manager - dashboard - easterr\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|c:\\users\\travis\\onedrive\\infra manager - dashboard - easterr\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|c:\\users\\travis\\onedrive\\infra manager - dashboard - easterr\\views\\equipamentos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|solutionrelative:views\\equipamentos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|c:\\users\\travis\\onedrive\\infra manager - dashboard - easterr\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|c:\\users\\travis\\onedrive\\infra manager - dashboard - easterr\\wwwroot\\css\\infra.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|solutionrelative:wwwroot\\css\\infra.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|c:\\users\\travis\\onedrive\\infra manager - dashboard - easterr\\views\\equipamentos\\condenados.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0282D99D-6A52-257F-5640-58CF67715B7D}|InfraManager.csproj|solutionrelative:views\\equipamentos\\condenados.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T23:20:19.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-05-04T23:29:30.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T23:14:57.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAYwD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T23:14:28.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-29T17:54:57.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Condenados.cshtml",
+              "DocumentMoniker": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Views\\Equipamentos\\Condenados.cshtml",
+              "RelativeDocumentMoniker": "Views\\Equipamentos\\Condenados.cshtml",
+              "ToolTip": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Views\\Equipamentos\\Condenados.cshtml",
+              "RelativeToolTip": "Views\\Equipamentos\\Condenados.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-28T21:40:17.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "infra.css",
+              "DocumentMoniker": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\wwwroot\\css\\infra.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\infra.css",
+              "ToolTip": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\wwwroot\\css\\infra.css",
+              "RelativeToolTip": "wwwroot\\css\\infra.css",
+              "ViewState": "AgIAAO0BAAAAAAAAAAAwwAUCAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-04-28T18:53:57.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-28T19:38:37.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-28T21:41:13.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Equipamento.cs",
+              "DocumentMoniker": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Models\\Equipamento.cs",
+              "RelativeDocumentMoniker": "Models\\Equipamento.cs",
+              "ToolTip": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Models\\Equipamento.cs",
+              "RelativeToolTip": "Models\\Equipamento.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAwDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T23:15:12.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EquipamentosController.cs",
+              "DocumentMoniker": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Controllers\\EquipamentosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EquipamentosController.cs",
+              "ToolTip": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Controllers\\EquipamentosController.cs",
+              "RelativeToolTip": "Controllers\\EquipamentosController.cs",
+              "ViewState": "AgIAANcAAAAAAAAAAAAuwAABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T21:20:45.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Views\\Equipamentos\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Equipamentos\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\travis\\OneDrive\\Infra Manager - Dashboard - easterr\\Views\\Equipamentos\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Equipamentos\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-28T21:40:34.372Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

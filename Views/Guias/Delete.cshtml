@@ -1,0 +1,39 @@
+@model InfraManager.Models.Guia
+
+@{
+    ViewData["Title"] = "Excluir Guia";
+}
+
+<div class="page-container form-container">
+
+    <h2>Excluir Guia</h2>
+
+    @* card de confirmação com os dados do guia que será excluído *@
+    <div class="card-confirmacao">
+        <p>Tem certeza que deseja excluir o guia abaixo?</p>
+        <div class="info-exclusao">
+            <strong>@Model.Titulo</strong>
+            <small>Por: @Model.Autor • @Model.DataCriacao.ToString("dd/MM/yyyy")</small>
+
+            @* aviso extra: se o guia tiver PDF, informa que o arquivo também será deletado
+               isso é importante para o usuário saber o que vai perder *@
+            @if (!string.IsNullOrEmpty(Model.ArquivoPdf))
+            {
+                <small class="aviso-pdf">⚠️ O arquivo PDF também será deletado.</small>
+            }
+        </div>
+    </div>
+
+    <form asp-action="Delete" method="post">
+        @Html.AntiForgeryToken()
+
+        @* campo oculto com o Id do guia para o controller saber qual excluir *@
+        <input type="hidden" asp-for="Id" />
+
+        <div class="form-acoes">
+            <button type="submit" class="btn-action btn-excluir">Sim, excluir</button>
+            <a asp-action="Index" class="btn-voltar">Cancelar</a>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,37 @@
+@model InfraManager.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Excluir Tarefa";
+}
+
+<div class="page-container form-container">
+
+    <h2>Excluir Tarefa</h2>
+
+    @* card vermelho que mostra os dados da tarefa que será excluída *@
+    <div class="card-confirmacao">
+        <p>Tem certeza que deseja excluir a tarefa abaixo?</p>
+        <div class="info-exclusao">
+            <strong>@Model.Titulo</strong>
+            <span>@(Model.Descricao ?? "Sem descrição")</span>
+        </div>
+    </div>
+
+    @* formulário de confirmação — method="post" é obrigatório aqui!
+       excluir é uma ação que altera o banco, nunca deve ser feita via GET *@
+    <form asp-action="Delete" method="post">
+        @Html.AntiForgeryToken()
+
+        @* campo oculto com o Id — o controller precisa saber qual tarefa excluir *@
+        <input type="hidden" asp-for="Id" />
+
+        <div class="form-acoes">
+            @* botão vermelho de confirmação *@
+            <button type="submit" class="btn-action btn-excluir">Sim, excluir</button>
+
+            @* link para cancelar e voltar sem excluir nada *@
+            <a asp-action="Index" class="btn-voltar">Cancelar</a>
+        </div>
+    </form>
+
+</div>

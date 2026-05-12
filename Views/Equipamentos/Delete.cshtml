@@ -1,0 +1,33 @@
+@*
+   Equipamentos/Delete.cshtml — tela de confirmação de exclusão
+*@
+
+@model InfraManager.Models.Equipamento
+
+@{
+    ViewData["Title"] = "Excluir Equipamento";
+}
+
+<div class="page-container form-container">
+
+    <h2>Excluir Equipamento</h2>
+
+    <div class="card-confirmacao">
+        <p>Tem certeza que deseja excluir o equipamento abaixo?</p>
+        <div class="info-exclusao">
+            <strong>@Model.Tipo — Patrimônio: @Model.Patrimonio</strong>
+            <span>Responsável: @Model.Responsavel</span>
+            <span>@(Model.Descricao ?? "Sem descrição")</span>
+        </div>
+    </div>
+
+    <form asp-action="Delete" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Id" />
+        <div class="form-acoes">
+            <button type="submit" class="btn-action btn-excluir">Sim, excluir</button>
+            <a asp-action="Index" class="btn-voltar">Cancelar</a>
+        </div>
+    </form>
+
+</div>

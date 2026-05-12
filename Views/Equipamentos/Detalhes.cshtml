@@ -1,0 +1,60 @@
+@*
+   equipamentos/Detalhes.cshtml — tela com todos os dados
+   do equipamento, igual ao modal de histórico do Python
+*@
+
+@model InfraManager.Models.Equipamento
+
+@{
+    ViewData["Title"] = "Detalhes do Equipamento";
+}
+
+<div class="page-container">
+
+    <h2>Detalhes do Equipamento</h2>
+
+    <div class="detalhes-card">
+
+        @* cabeçalho com tipo, patrimônio e badge de gravidade *@
+        <div class="detalhes-header">
+            <h3>@Model.Tipo — Patrimônio: @Model.Patrimonio</h3>
+            <span class="badge-gravidade @Model.Gravidade.ToLower()">@Model.Gravidade</span>
+        </div>
+
+        @* ggrade com as informações do equipamento *@
+        <div class="detalhes-grid">
+            <div class="detalhe-item">
+                <span class="detalhe-label">Responsável</span>
+                <span class="detalhe-valor">@Model.Responsavel</span>
+            </div>
+            <div class="detalhe-item">
+                <span class="detalhe-label">Localização</span>
+                <span class="detalhe-valor">@Model.Localizacao</span>
+            </div>
+            <div class="detalhe-item">
+                <span class="detalhe-label">Data de Entrada</span>
+                <span class="detalhe-valor">@Model.DataEntrada.ToString("dd/MM/yyyy")</span>
+            </div>
+            <div class="detalhe-item">
+                <span class="detalhe-label">Tipo</span>
+                <span class="detalhe-valor">@Model.Tipo</span>
+            </div>
+        </div>
+
+        @* descrição do problema (ate q enfim ocupa a largura toda) *@
+        @if (!string.IsNullOrEmpty(Model.Descricao))
+        {
+            <div class="detalhe-descricao">
+                <span class="detalhe-label">Descrição do Problema</span>
+                <p>@Model.Descricao</p>
+            </div>
+        }
+    </div>
+
+    <div class="form-acoes" style="margin-top: 24px">
+        <a asp-action="Index" class="btn-voltar">← Voltar</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn-action btn-editar">Editar</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn-action btn-excluir">Excluir</a>
+    </div>
+
+</div>

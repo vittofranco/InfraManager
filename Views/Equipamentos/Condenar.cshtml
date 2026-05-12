@@ -1,0 +1,62 @@
+﻿@*
+   Equipamentos/Condenar.cshtml — formulário de condenação
+   abre com os dados do equipamento já preenchidos
+   o usuário só precisa preencher os campos da condenação
+*@
+
+@model InfraManager.Models.Equipamento
+
+@{
+    ViewData["Title"] = "Condenar Equipamento";
+}
+
+<div class="page-container form-container">
+
+    <h2>Condenar Equipamento</h2>
+
+    @* card com os dados atuais do equipamento — somente leitura, só para referência *@
+    <div class="card-confirmacao" style="margin-bottom: 24px;">
+        <p><strong>Equipamento selecionado:</strong></p>
+        <div class="info-exclusao">
+            <strong>@Model.Tipo — Patrimônio: @Model.Patrimonio</strong>
+            <span>Responsável: @Model.Responsavel • Localização: @Model.Localizacao</span>
+        </div>
+    </div>
+
+    @* o form envia para POST /Equipamentos/Condenar/{id} *@
+    <form asp-action="Condenar" asp-route-id="@Model.Id" method="post">
+        @Html.AntiForgeryToken()
+
+        @* marca do equipamento — pedido pela auditoria *@
+        <div class="form-group">
+            <label for="marcaEquipamento">Marca do Equipamento</label>
+            <input type="text" id="marcaEquipamento" name="marcaEquipamento"
+                   class="form-input" placeholder="Ex: é Dell ou Positivo? quem sabe sabe"
+                   value="@Model.MarcaEquipamento" />
+        </div>
+
+        @* motivo da condenação — opcional *@
+        <div class="form-group">
+            <label for="motivoCondenacao">Motivo da Condenação</label>
+            <textarea id="motivoCondenacao" name="motivoCondenacao"
+                      class="form-input" rows="3"
+                      placeholder="Descreva o motivo (opcional)...">@Model.MotivoCondenacao</textarea>
+        </div>
+
+        @* patrimônio do equipamento que repôs — opcional *@
+        <div class="form-group">
+            <label for="reposicaoPatrimonio">Patrimônio de Reposição</label>
+            <input type="text" id="reposicaoPatrimonio" name="reposicaoPatrimonio"
+                   class="form-input" placeholder="Patrimônio do equipamento que substituiu (opcional)"
+                   value="@Model.ReposicaoPatrimonio" />
+        </div>
+
+        <div class="form-acoes">
+            <button type="submit" class="btn-action btn-condenar" style="padding: 10px 24px;">
+                Confirmar Condenação
+            </button>
+            <a asp-action="Index" class="btn-voltar">Cancelar</a>
+        </div>
+    </form>
+
+</div>

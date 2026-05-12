@@ -1,0 +1,53 @@
+@model InfraManager.Models.Guia
+
+@{
+    ViewData["Title"] = "Novo Guia";
+}
+
+<div class="page-container form-container">
+
+    <h2>Novo Guia de Instalação</h2>
+
+    @* enctype="multipart/form-data" é OBRIGATÓRIO quando o formulário tem upload de arquivo.
+       sem isso, o arquivo não chega no controller — o C# recebe null no lugar do PDF *@
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <label asp-for="Titulo">Título</label>
+            <input asp-for="Titulo" class="form-input" placeholder="Ex: Como instalar o ProDoctor" />
+            <span asp-validation-for="Titulo" class="erro-validacao"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Autor">Autor</label>
+            <input asp-for="Autor" class="form-input" placeholder="Seu nome" />
+            <span asp-validation-for="Autor" class="erro-validacao"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ConteudoTexto">Passo a Passo (texto)</label>
+            <textarea asp-for="ConteudoTexto" class="form-input" rows="6"
+                placeholder="Descreva os passos aqui... (opcional se enviar PDF)"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Anexar PDF <small class="label-hint">(opcional se preencher o texto)</small></label>
+
+            @* campo de upload de arquivo
+               name="arquivoPdf" precisa ser EXATSAMENTE igual ao nome do parâmetro
+               na função do controller: Create(Guia guia, IFormFile? arquivoPdf)
+               accept=".pdf" faz o seletor de arqyuivo mostrar só PDFs por padrão *@
+            <input type="file" name="arquivoPdf" accept=".pdf" class="form-input-file" />
+        </div>
+
+        @* mostra mensagem de erro se o arquivo não for PDF *@
+        <span class="erro-validacao">@ViewData["ErroPdf"]</span>
+
+        <div class="form-acoes">
+            <button type="submit" class="add-item-btn">Salvar Guia</button>
+            <a asp-action="Index" class="btn-voltar">Cancelar</a>
+        </div>
+    </form>
+
+</div>

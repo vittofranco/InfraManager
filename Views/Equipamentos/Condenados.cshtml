@@ -1,0 +1,74 @@
+﻿@*
+   Equipamentos/Condenados.cshtml — lista de equipamentos condenados
+   histórico de todos os equipamentos que receberam baixa no patrimônio
+*@
+
+@model IEnumerable<InfraManager.Models.Equipamento>
+
+@{
+    ViewData["Title"] = "Equipamentos Condenados";
+}
+
+<div class="page-container">
+
+    <h2>Equipamentos Condenados</h2>
+
+    <div class="header-view">
+        <a asp-action="Index" class="btn-voltar">← Voltar para Em Manutenção</a>
+    </div>
+
+    @if (Model.Any())
+    {
+        <div class="equip-lista">
+            @foreach (var equip in Model)
+            {
+                <div class="equip-card equip-card-condenado">
+                    <div class="equip-card-header">
+                        <div class="equip-card-titulo">
+                            <strong>@equip.Tipo — Patrimônio: @equip.Patrimonio</strong>
+                        </div>
+
+                        @* badge fixo vermelho indicando condenado *@
+                        <span class="badge-gravidade alta">Condenado</span>
+                    </div>
+
+                    <div class="equip-info" style="margin-top: 8px;">
+                        <small>
+                            Marca: <strong>@(equip.MarcaEquipamento ?? "Não informada")</strong> •
+                            Responsável: <strong>@equip.Responsavel</strong> •
+                            Localização: <strong>@equip.Localizacao</strong>
+                        </small>
+                    </div>
+
+                    @* exibe o motivo se foi preenchido *@
+                    @if (!string.IsNullOrEmpty(equip.MotivoCondenacao))
+                    {
+                        <p class="equip-descricao">Motivo: @equip.MotivoCondenacao</p>
+                    }
+
+                    @* exibe o patrimônio de reposição se foi preenchido *@
+                    @if (!string.IsNullOrEmpty(equip.ReposicaoPatrimonio))
+                    {
+                        <p class="equip-descricao">Reposto por: <strong>@equip.ReposicaoPatrimonio</strong></p>
+                    }
+
+                    <div class="equip-info">
+                        <small>
+                            Condenado em: <strong>@equip.DataCondenacao?.ToString("dd/MM/yyyy HH:mm")</strong>
+                        </small>
+                    </div>
+
+                    <div class="equip-acoes">
+                        <a asp-action="Detalhes" asp-route-id="@equip.Id" class="btn-action btn-ver">Detalhes</a>
+                        <a asp-action="Delete" asp-route-id="@equip.Id" class="btn-action btn-excluir">Excluir</a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="lista-vazia">Nenhum equipamento condenado ainda.</p>
+    }
+
+</div>
