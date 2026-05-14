@@ -4,3 +4,4 @@ obj/
 appsettings.json
 appsettings.*.json
 wwwroot/uploads/
+*.user
