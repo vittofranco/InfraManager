@@ -21,7 +21,6 @@ namespace InfraManager.Controllers
             _context = context;
         }
 
-        // INDEX
         // responde a: GET /Tarefas
         // mostra a lista de todas as tarefas
         // o parâmetro "filtro" vem da URL: /Tarefas?filtro=pendentes
@@ -112,7 +111,6 @@ namespace InfraManager.Controllers
         // DELETE (GET)
         // responde a: GET /Tarefas/Delete/5
         // mostra a tela de confirmação antes de excluir
-        // (boa prática: nunca excluir sem perguntar antes!)
         public async Task<IActionResult> Delete(int id)
         {
             var tarefa = await _context.Tarefas.FindAsync(id);
@@ -146,7 +144,6 @@ namespace InfraManager.Controllers
         // CONCLUIR (POST)
         // responde a: POST /Tarefas/Concluir/5
         // marca uma tarefa como concluída
-        // IMPORTANTE: é POST (não GET) porque estamos alterando dados no banco.
         // nunca use um link simples (<a href>) para alterar dados!
         [HttpPost]
         [ValidateAntiForgeryToken]

@@ -2,7 +2,6 @@
 // um Controller é como um "garçom" do sistema:
 // o usuário faz um pedido (acessando uma URL),
 // o controller busca o que precisa e entrega a tela certa.
-// ============================================================
 
 using System.Diagnostics;
 using InfraManager.Models;

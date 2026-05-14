@@ -34,10 +34,6 @@
         <div class="form-group">
             <label>Anexar PDF <small class="label-hint">(opcional se preencher o texto)</small></label>
 
-            @* campo de upload de arquivo
-               name="arquivoPdf" precisa ser EXATSAMENTE igual ao nome do parâmetro
-               na função do controller: Create(Guia guia, IFormFile? arquivoPdf)
-               accept=".pdf" faz o seletor de arqyuivo mostrar só PDFs por padrão *@
             <input type="file" name="arquivoPdf" accept=".pdf" class="form-input-file" />
         </div>
 

@@ -1,5 +1,4 @@
 /* ============================================================
-   infra.css — estilos do InfraManager
    Organizado em seções:
      1. Variáveis e Reset
      2. Layout (painel único com sidebar integrada)
@@ -12,7 +11,7 @@
    ============================================================ */
 
 
-/* ── 1. VARIÁVEIS E RESET ─────────────────────────────────── */
+/* 1 - variáveis e reset*/
 :root {
     --primary: #162938;
     --primary-dark: #0d1a26;
@@ -24,12 +23,9 @@
     --border: #e4eaf2;
     --text-muted: #8a9ab0;
     --bg-card: rgba(255, 255, 255, 0.82);
-    /* sidebar integrada no painel */
     --sidebar-w: 200px;
-    /* painel único */
     --panel-radius: 24px;
     --panel-shadow: 0 8px 48px rgba(22, 41, 56, 0.13);
-    /* fundo suave — inspirado no CoachPro */
     --bg-gradient: linear-gradient(145deg, #f0f8f7 0%, #c8e6e2 40%, #c8ecec 100%);
     --bg-gradient-card: linear-gradient(145deg, #daeaea 0%, #daeaea 40%, #f0f8f7 100%);
 }
@@ -40,14 +36,13 @@
     box-sizing: border-box;
 }
 
-/* ── 2. LAYOUT ────────────────────────────────────────────── */
+/* layout */
 
 body {
     font-family: 'Malgun Gothic', sans-serif;
     background: transparent;
     background-size: 400% 400%;
     min-height: 100vh;
-    /* centraliza o painel na tela */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,13 +79,13 @@ body {
     min-height: calc(100vh - 64px);
     background: transparent;
     border-radius: 20px;
-    overflow: hidden; /* garante que sidebar e conteúdo ficam dentro do arredondamento */
+    overflow: hidden; /* overflow hiddne garante que sidebar e conteúdo ficam dentro do arredondamento */
     backdrop-filter: blur(20px);
     border: 2px solid rgba(255, 255, 255, .5);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
 }
 
-/* ── Sidebar — coluna esquerda do painel ── */
+/* sidebar */
 .sidebar {
     width: var(--sidebar-w);
     flex-shrink: 0;
@@ -148,7 +143,7 @@ body {
     color: var(--primary);
 }
 
-/* link ativo — pill escura igual ao CoachPro */
+/* link ativo */
 .sidebar-link.active {
     background: var(--primary);
     color: white;
@@ -163,7 +158,7 @@ body {
 
 .sidebar-label { font-size: 14px; font-weight: bold; }
 
-/* ── Área principal (topbar + conteúdo) ── */
+/* Área principal (topbar + conteúdo) */
 .app-main {
     flex: 1;
     display: flex;
@@ -209,12 +204,10 @@ body {
     overflow-y: auto;
 }
 
-/* page-container vira transparente — o painel já é o quadrado */
 .page-container {
     height: 100%;
 }
 
-/* container menor para formulários */
 .form-container {
     max-width: 560px;
 }
@@ -229,7 +222,6 @@ h2 {
     color: var(--primary);
 }
 
-/* linha com botão(ões) no topo de listas */
 .header-view {
     margin-bottom: 16px;
 }
@@ -242,11 +234,6 @@ h2 {
     padding: 30px 0;
     font-size: 15px;
 }
-
-
-/* ── 3. COMPONENTES BASE ──────────────────────────────────── */
-
-/* --- Botões --- */
 
 /* botão principal (azul escuro) */
 .add-item-btn {
@@ -268,7 +255,7 @@ h2 {
     color: white;
 }
 
-/* botões de ação (editar, excluir, ver, etc.) */
+/* botões de ação editar, excluir, ver, etc. */
 .btn-action {
     display: inline-block;
     padding: 5px 12px;
@@ -304,7 +291,7 @@ h2 {
 
 .btn-voltar:hover { background: #e0e0e0; }
 
-/* botões do histórico (concluídos / condenados) */
+/* botões do histórico concluídos / condenados */
 .btn-historico {
     background: var(--primary-light);
     color: var(--primary);
@@ -313,7 +300,7 @@ h2 {
 
 .btn-historico:hover { background: var(--border); }
 
-/* --- Tabela --- */
+/* tabela */
 
 table {
     width: 100%;
@@ -340,7 +327,7 @@ tbody tr:hover { background-color: #f9f9f9; }
     flex-wrap: wrap;
 }
 
-/* --- Status badges (tarefas) --- */
+/* status badges tarefas */
 
 .status-pendente {
     color: var(--danger);
@@ -353,8 +340,6 @@ tbody tr:hover { background-color: #f9f9f9; }
     font-weight: 600;
     font-size: 13px;
 }
-
-/* --- Formulários --- */
 
 .filtro-container { margin-bottom: 16px; }
 
@@ -443,11 +428,6 @@ textarea.form-input { resize: vertical; }
     font-size: 12px;
 }
 
-/* --- Card genérico --- */
-/*
-   Base compartilhada por guia-card, equip-card, home-card, etc.
-   Cada um sobrescreve só o que precisa.
-*/
 .card {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -487,7 +467,7 @@ textarea.form-input { resize: vertical; }
 }
 
 
-/* ── 4. PÁGINA: HOME ──────────────────────────────────────── */
+/* home */
 
 .home-container p {
     color: #666;
@@ -541,13 +521,6 @@ textarea.form-input { resize: vertical; }
 
 .home-card strong { font-size: 17px; font-weight: bold; }
 .home-card small  { font-size: 12px; color: var(--text-muted); }
-
-
-/* ── 5. PÁGINA: TAREFAS ───────────────────────────────────── */
-/* (usa tabela e badges de status — definidos nos componentes base) */
-
-
-/* ── 6. PÁGINA: GUIAS ─────────────────────────────────────── */
 
 .guias-lista {
     display: flex;
@@ -634,9 +607,6 @@ textarea.form-input { resize: vertical; }
     font-size: 12px;
     font-weight: 600;
 }
-
-
-/* ── 7. PÁGINA: EQUIPAMENTOS ──────────────────────────────── */
 
 /* cabeçalho com botões de histórico e cadastro */
 .equip-header-top {

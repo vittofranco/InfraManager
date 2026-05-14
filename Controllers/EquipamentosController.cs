@@ -20,7 +20,6 @@ namespace InfraManager.Controllers
             _context = context;
         }
 
-        // INDEX
         // responde a: GET /Equipamentos
         // lista apenas os equipamentos EM ABERTO (não concluídos e não condenados)
         // o parâmetro "busca" vem da URL: /Equipamentos?busca=12345
@@ -90,9 +89,6 @@ namespace InfraManager.Controllers
 
         // EDIT (POST)
         // responde a: POST /Equipamentos/Edit/5
-        // CORREÇÃO: em vez de _context.Update() direto (que pode sobrescrever campos
-        // com valores vazios), buscamos o registro atual do banco e atualizamos
-        // apenas os campos que o usuário pode editar na tela de edição
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Equipamento formulario)
@@ -182,8 +178,7 @@ namespace InfraManager.Controllers
                 return NotFound();
 
             equipamento.Concluido = true;
-            // DateTime.Now registra data E hora — importante para o histórico de auditoria
-            // DateTime.Today registraria só a data (00:00:00), perdendo precisão
+            // DateTime.Now registra data E hora
             equipamento.DataConclusao = DateTime.Now;
 
             await _context.SaveChangesAsync();

@@ -1,7 +1,6 @@
 // AppDbContext.cs — a "ponte" entre o sistema e o banco de dados
 // toda vez que o sistema precisar salvar, buscar, editar ou
 // apagar alguma coisa no banco, ele passa por aqui.
-// pense nele como um "gerente" que sabe falar com o banco.
 
 using Microsoft.EntityFrameworkCore;
 using InfraManager.Models;
@@ -18,7 +17,6 @@ namespace InfraManager.Data
         }
 
         // cada linha abaixo representa uma TABELA no banco de dados.
-        // DbSet<Tarefa> significa "uma coleção de registros do tipo Tarefa"
 
         public DbSet<Tarefa> Tarefas { get; set; }           // tabela de tarefas
         public DbSet<Equipamento> Equipamentos { get; set; } // tabela de equipamentos

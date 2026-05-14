@@ -30,7 +30,6 @@ namespace InfraManager.Controllers
             _uploadFolder = Path.Combine(env.WebRootPath, "uploads");
 
             // cria a pasta "uploads" se ela ainda não existir
-            // assim nunca vai dar erro de "pasta não encontrada" ao salvar um PDF
             Directory.CreateDirectory(_uploadFolder);
         }
 
@@ -63,9 +62,7 @@ namespace InfraManager.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Guia guia, IFormFile? arquivoPdf)
         {
-            // CORREÇÃO: remove ArquivoPdf e ConteudoTexto da validação automática
-            // porque esses campos são opcionais individualmente — a validação manual
-            // está logo abaixo, verificando se pelo menos um dos dois foi preenchido
+
             ModelState.Remove("ArquivoPdf");
             ModelState.Remove("ConteudoTexto");
 
@@ -87,7 +84,6 @@ namespace InfraManager.Controllers
                 var nomeSeguro = Path.GetFileName(arquivoPdf.FileName);
 
                 // monta o nome final: NomeDoAutor_NomeDoArquivo.pdf
-                // replace(" ", "_") troca espaços por underline no nome do autor
                 // se o autor estiver vazio, usa "sem_autor" para não quebrar o nome do arquivo
                 var autorNome = string.IsNullOrWhiteSpace(guia.Autor) ? "sem_autor" : guia.Autor.Replace(" ", "_");
                 var nomeArquivo = $"{autorNome}_{nomeSeguro}";
@@ -102,14 +98,12 @@ namespace InfraManager.Controllers
                     await arquivoPdf.CopyToAsync(stream);
                 }
 
-                // salva APENAS O NOME do arquivo no banco de dados
                 // O arquivo em si fica na pasta uploads — no banco só guardamos o nome
                 // para saber qual arquivo buscar depois
                 guia.ArquivoPdf = nomeArquivo;
             }
 
             // verifica se pelo menos texto OU pdf foi preenchido
-            // IsNullOrWhiteSpace verifica se está vazio ou só tem espaços
             if (string.IsNullOrWhiteSpace(guia.ConteudoTexto) && string.IsNullOrWhiteSpace(guia.ArquivoPdf))
             {
                 ModelState.AddModelError("", "Preencha o texto ou envie um PDF.");
@@ -126,7 +120,6 @@ namespace InfraManager.Controllers
             return View(guia);
         }
 
-        // ver
         // responde a: GET /Guias/Ver/5
         // abre a tela que mostra o conteúdo completo do guia
         public async Task<IActionResult> Ver(int id)
@@ -163,7 +156,7 @@ namespace InfraManager.Controllers
 
             if (guia != null)
             {
-                // Se esse guia tinha um PDF, deleta o arquivo físico da pasta uploads também
+                // se esse guia tinha um PDF, deleta o arquivo físico da pasta uploads também
                 // não adianta só remover do banco — o arquivo ficaria "sobrando" na pasta
                 if (!string.IsNullOrEmpty(guia.ArquivoPdf))
                 {

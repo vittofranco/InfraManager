@@ -21,7 +21,7 @@
         const inicioSalvo = localStorage.getItem("bgAnimStart");                // localstorage é uma mini memória do navegador, guarda dados mesmo mudando de página
 
         if (inicioSalvo) {                                                      
-            const tempoTotal = 15000;                                           // 15s (igual CSS)
+            const tempoTotal = 15000;                                          
             const agora = Date.now();
             const decorrido = (agora - parseInt(inicioSalvo)) % tempoTotal;
 
@@ -39,7 +39,7 @@
     @* wrapper principal: fundo gradiente + sidebar + conteúdo lado a lado *@
     <div class="app-wrapper">
 
-        @* ── SIDEBAR ─────────────────────────────────────── *@
+        @*sidebar *@
         <aside class="sidebar">
 
             @* logo no topo da sidebar *@
@@ -65,7 +65,7 @@
 
         </aside>
 
-        @* ── ÁREA PRINCIPAL ──────────────────────────────── *@
+        @* área principal *@
         <div class="app-main">
 
             @* conteúdo de cada página é renderizado aqui *@
@@ -80,7 +80,7 @@
 
     @* marca o link ativo na sidebar conforme a URL atual *@
     <script>
-        // pega o caminho da URL atual (ex: /Equipamentos)
+        // pega o caminho da URL atual
         const path = window.location.pathname.toLowerCase();
 
         // percorre todos os links da sidebar

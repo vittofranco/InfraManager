@@ -7,7 +7,7 @@
 
 <div class="page-container">
 
-    <h2>📘 @Model.Titulo</h2>
+    <h2>@Model.Titulo</h2>
 
     @*informações de quem criou e quando *@
     <div class="guia-meta">
@@ -18,7 +18,7 @@
     @if (!string.IsNullOrEmpty(Model.ArquivoPdf))
     {
         <div class="guia-secao">
-            <h3>📄 PDF Anexado</h3>
+            <h3>PDF Anexado</h3>
             <div class="pdf-acoes">
 
               
@@ -38,7 +38,7 @@
     @if (!string.IsNullOrEmpty(Model.ConteudoTexto))
     {
         <div class="guia-secao">
-            <h3>📝 Passo a Passo</h3>
+            <h3>Passo a Passo</h3>
 
             @* <pre> mantém a formatação original do texto:
                quebras de linha, espaços e tabulações ficam como foram digitados *@

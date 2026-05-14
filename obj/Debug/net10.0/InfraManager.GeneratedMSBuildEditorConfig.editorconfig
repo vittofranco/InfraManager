@@ -19,105 +19,105 @@ build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v10.0
 build_property.RootNamespace = InfraManager
 build_property.RootNamespace = InfraManager
-build_property.ProjectDir = C:\Users\abner\OneDrive\Infra Manager - Dashboard - easterr\
+build_property.ProjectDir = C:\Users\victor.franco\OneDrive\Infra Manager - Dashboard\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\abner\OneDrive\Infra Manager - Dashboard - easterr
+build_property.MSBuildProjectDirectory = C:\Users\victor.franco\OneDrive\Infra Manager - Dashboard
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Equipamentos/Condenados.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Equipamentos/Condenados.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBhbWVudG9zXENvbmRlbmFkb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Equipamentos/Condenar.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Equipamentos/Condenar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBhbWVudG9zXENvbmRlbmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Equipamentos/Create.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Equipamentos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBhbWVudG9zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Equipamentos/Delete.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Equipamentos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBhbWVudG9zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Equipamentos/Detalhes.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Equipamentos/Detalhes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBhbWVudG9zXERldGFsaGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Equipamentos/Edit.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Equipamentos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBhbWVudG9zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Equipamentos/Historico.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Equipamentos/Historico.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBhbWVudG9zXEhpc3Rvcmljby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Equipamentos/Index.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Equipamentos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBhbWVudG9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Guias/Create.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Guias/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3VpYXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Guias/Delete.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Guias/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3VpYXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Guias/Index.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Guias/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3VpYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Guias/Ver.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Guias/Ver.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3VpYXNcVmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Home/Index.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Home/Privacy.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Shared/Error.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Tarefas/Create.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Tarefas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWZhc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Tarefas/Delete.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Tarefas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWZhc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Tarefas/Edit.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Tarefas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWZhc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Tarefas/Index.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Tarefas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWZhc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/_ViewImports.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/_ViewStart.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/abner/OneDrive/Infra Manager - Dashboard - easterr/Views/Shared/_Layout.cshtml]
+[C:/Users/victor.franco/OneDrive/Infra Manager - Dashboard/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-8gz0ur90nb
